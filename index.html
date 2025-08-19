@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EternaGlow — Your Glow, Forever.</title>
+  <meta name="description" content="EternaGlow brings spa-grade beauty tech to your home. LED therapy, sonic cleansers, and IPL — your glow, forever." />
+  <link rel="icon" href="assets/logo.svg" />
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { 
+      backdrop-filter: blur(10px); 
+      background: rgba(255,255,255,0.7); 
+    }
+    .shadow-soft { 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    dialog {
+      margin: auto;
+    }
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-rose-50 via-amber-50 to-white text-neutral-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 glass">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="EternaGlow logo" class="h-10 w-auto rounded-xl shadow-soft" />
+        <span class="font-serif text-xl tracking-wide">EternaGlow</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#shop" class="hover:opacity-70 transition-opacity">Shop</a>
+        <a href="#reviews" class="hover:opacity-70 transition-opacity">Reviews</a>
+        <a href="#faq" class="hover:opacity-70 transition-opacity">FAQ</a>
+        <a href="#policies" class="hover:opacity-70 transition-opacity">Policies</a>
+      </nav>
+      <button id="openCart" class="relative rounded-full px-4 py-2 border border-neutral-300 hover:bg-white shadow-soft transition-all">
+        Cart <span id="cartCount" class="ml-1 text-sm font-semibold">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-4 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="font-serif text-4xl md:text-6xl leading-tight">Your Glow, <span class="bg-gradient-to-r from-amber-500 to-rose-500 bg-clip-text text-transparent">Forever.</span></h1>
+      <p class="mt-5 text-lg md:text-xl text-neutral-700 leading-relaxed">Spa-grade beauty tech you can use at home — LED therapy, sonic cleansing, and IPL hair reduction. Designed for results, built for confidence.</p>
+      <div class="mt-6 flex gap-3">
+        <a href="#shop" class="rounded-2xl px-5 py-3 bg-neutral-900 text-white hover:opacity-90 shadow-soft transition-all">Shop Bestsellers</a>
+        <a href="#why" class="rounded-2xl px-5 py-3 border border-neutral-300 hover:bg-white shadow-soft transition-all">Why EternaGlow</a>
+      </div>
+      <div class="mt-6 flex items-center gap-3 text-sm text-neutral-600">
+        <span>✓ 30-Day Trial</span> <span>·</span> <span>✓ 1-Year Warranty</span> <span>·</span> <span>✓ Free Shipping*</span>
+      </div>
+    </div>
+    <div class="relative">
+      <img src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Beauty tech lifestyle" class="rounded-3xl shadow-soft w-full object-cover h-[380px] md:h-[520px]" />
+      <div class="absolute -bottom-6 left-6 bg-white/90 glass rounded-2xl p-4 shadow-soft">
+        <p class="text-sm">Loved by 20,000+ customers • 4.8/5 average rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="font-serif text-3xl md:text-4xl text-center mb-4">Why choose EternaGlow?</h2>
+    <p class="text-center text-neutral-600 mb-8 max-w-2xl mx-auto">We bring professional-grade beauty technology to your home with devices designed for safety, effectiveness, and lasting results.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-rose-500 rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-xl">✨</span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Clinical-Style Results</h3>
+        <p class="text-neutral-700">Technologies used by professionals — adapted for safe, consistent at-home use with proven effectiveness.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-rose-500 rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-xl">⚡</span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Premium Build</h3>
+        <p class="text-neutral-700">Silicone, glass, and aluminum finishes; devices designed to last years with consistent performance.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-lg transition-shadow">
+        <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-rose-500 rounded-xl mb-4 flex items-center justify-center">
+          <span class="text-white text-xl">🤝</span>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Support That Cares</h3>
+        <p class="text-neutral-700">30-day trial, 1-year warranty, and human support for complete peace of mind with your purchase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop" class="max-w-7xl mx-auto px-4 py-12">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h2 class="font-serif text-3xl md:text-4xl mb-2">Bestsellers</h2>
+        <p class="text-neutral-600">Discover our most-loved beauty tech devices</p>
+      </div>
+      <div class="hidden md:block text-sm text-neutral-600">Tap a product to learn more</div>
+    </div>
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="max-w-7xl mx-auto px-4 py-12 bg-gradient-to-r from-rose-50/50 to-amber-50/50 rounded-3xl">
+    <h2 class="font-serif text-3xl md:text-4xl text-center mb-4">What customers say</h2>
+    <p class="text-center text-neutral-600 mb-8 max-w-2xl mx-auto">Real reviews from real customers who've transformed their skincare routine with EternaGlow.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <figure class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="flex items-center gap-1 mb-3">
+          <span class="text-yellow-400">★★★★★</span>
+        </div>
+        <blockquote class="text-neutral-800 mb-3">"I've used the LED mask for 3 weeks and my skin is noticeably calmer and brighter. Worth every penny!"</blockquote>
+        <figcaption class="text-sm text-neutral-600">— Alia S., Mumbai</figcaption>
+      </figure>
+      <figure class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="flex items-center gap-1 mb-3">
+          <span class="text-yellow-400">★★★★★</span>
+        </div>
+        <blockquote class="text-neutral-800 mb-3">"The sonic cleanser is now my daily must-have. Makeup comes off so easily and my pores look smaller."</blockquote>
+        <figcaption class="text-sm text-neutral-600">— Priya K., Delhi</figcaption>
+      </figure>
+      <figure class="bg-white rounded-2xl p-6 shadow-soft">
+        <div class="flex items-center gap-1 mb-3">
+          <span class="text-yellow-400">★★★★★</span>
+        </div>
+        <blockquote class="text-neutral-800 mb-3">"Bye razor burn! IPL handset is gentle but effective. Seeing great results after 6 weeks."</blockquote>
+        <figcaption class="text-sm text-neutral-600">— Rhea D., Bangalore</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="font-serif text-3xl md:text-4xl text-center mb-8">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <details class="bg-white rounded-2xl p-6 shadow-soft group">
+        <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+          Is LED/IPL safe for home use?
+          <span class="text-neutral-400 group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="mt-3 text-neutral-700 leading-relaxed">Our devices are designed with built-in safety features and gentle power levels appropriate for home use. Each device includes comprehensive safety instructions and automatic shut-off features.</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 shadow-soft group">
+        <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+          How long until I see results?
+          <span class="text-neutral-400 group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="mt-3 text-neutral-700 leading-relaxed">Many customers report visible improvements in 2–6 weeks with consistent use according to the instructions. LED therapy typically shows results in 3-4 weeks, while IPL hair reduction becomes noticeable after 4-6 sessions.</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 shadow-soft group">
+        <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+          Do you ship internationally?
+          <span class="text-neutral-400 group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="mt-3 text-neutral-700 leading-relaxed">Yes, we ship worldwide! Shipping times vary by country (5-15 business days). Duties and taxes may apply depending on your location. Free shipping is available on orders over $100.</p>
+      </details>
+      <details class="bg-white rounded-2xl p-6 shadow-soft group">
+        <summary class="cursor-pointer font-semibold text-lg flex items-center justify-between">
+          What's your return policy?
+          <span class="text-neutral-400 group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="mt-3 text-neutral-700 leading-relaxed">We offer a 30-day money-back guarantee on all unused items in original packaging. Simply contact our support team to initiate a return. Customer satisfaction is our priority.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Policies -->
+  <section id="policies" class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="font-serif text-3xl md:text-4xl text-center mb-8">Our Policies</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-sm">
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <h3 class="font-semibold text-lg mb-3">🚚 Shipping</h3>
+        <p class="text-neutral-700 leading-relaxed">Orders are processed within 1–2 business days. Typical delivery time is 5–10 business days. Free shipping on orders over $100. Express shipping available.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <h3 class="font-semibold text-lg mb-3">↩️ Returns</h3>
+        <p class="text-neutral-700 leading-relaxed">30-day return policy on unused items in original packaging. Contact support for RMA. Return shipping is free for defective items.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <h3 class="font-semibold text-lg mb-3">🛡️ Warranty</h3>
+        <p class="text-neutral-700 leading-relaxed">1-year limited warranty covering manufacturing defects. Extended warranty options available at checkout for added peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="assets/logo.svg" alt="EternaGlow logo" class="h-8 w-auto rounded-lg" />
+            <span class="font-serif text-xl">EternaGlow</span>
+          </div>
+          <p class="text-neutral-600 mb-4 max-w-md">Your trusted partner for at-home beauty technology. Professional results, premium quality, exceptional support.</p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-soft hover:shadow-lg transition-shadow">
+              📸
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-soft hover:shadow-lg transition-shadow">
+              🎵
+            </a>
+            <a href="https://pinterest.com" target="_blank" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-soft hover:shadow-lg transition-shadow">
+              📌
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-neutral-600">
+            <li><a href="#shop" class="hover:text-neutral-900 transition-colors">Shop All</a></li>
+            <li><a href="#reviews" class="hover:text-neutral-900 transition-colors">Reviews</a></li>
+            <li><a href="#faq" class="hover:text-neutral-900 transition-colors">FAQ</a></li>
+            <li><a href="#policies" class="hover:text-neutral-900 transition-colors">Policies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Support</h4>
+          <ul class="space-y-2 text-neutral-600">
+            <li><a href="mailto:support@eternaglow.com" class="hover:text-neutral-900 transition-colors">support@eternaglow.com</a></li>
+            <li><span>Mon-Fri 9AM-6PM IST</span></li>
+            <li><span>WhatsApp Support Available</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-200 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-neutral-600">© <span id="year"></span> EternaGlow. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-sm text-neutral-600">
+          <a href="#" class="hover:text-neutral-900 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-neutral-900 transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Modal -->
+  <dialog id="productModal" class="rounded-3xl p-0 w-[95%] md:w-[900px] max-w-[95vw] shadow-soft">
+    <div class="bg-white rounded-3xl overflow-hidden">
+      <div class="flex justify-between items-center p-6 border-b">
+        <h3 id="modalTitle" class="font-semibold text-xl">Product</h3>
+        <button id="closeModal" class="rounded-full border border-neutral-300 px-4 py-2 hover:bg-neutral-50 transition-colors">Close</button>
+      </div>
+      <div class="grid md:grid-cols-2 gap-0">
+        <img id="modalImg" alt="" class="w-full h-64 md:h-96 object-cover" />
+        <div class="p-6">
+          <p id="modalDesc" class="text-neutral-700 leading-relaxed mb-4"></p>
+          <h4 class="font-semibold mb-2">Key Features:</h4>
+          <ul id="modalBullets" class="list-disc pl-5 text-neutral-700 space-y-1 mb-6"></ul>
+          <div class="flex items-center gap-3 mb-6">
+            <span id="modalPrice" class="text-3xl font-bold text-neutral-900"></span>
+            <span id="modalCompare" class="line-through text-neutral-500 text-xl"></span>
+            <span class="bg-green-100 text-green-800 text-sm px-2 py-1 rounded-full">Save 35%</span>
+          </div>
+          <div class="flex gap-3">
+            <button id="addToCartBtn" class="flex-1 rounded-2xl px-6 py-4 bg-neutral-900 text-white hover:bg-neutral-800 transition-colors font-semibold">Add to Cart</button>
+            <a id="buyNowLink" target="_blank" class="flex-1 text-center rounded-2xl px-6 py-4 border-2 border-neutral-300 hover:bg-neutral-50 transition-colors font-semibold">Buy Now</a>
+          </div>
+          <div class="mt-4 text-sm text-neutral-600 space-y-1">
+            <p>✓ 30-day money-back guarantee</p>
+            <p>✓ 1-year warranty included</p>
+            <p>✓ Free shipping on orders over $100</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Cart Drawer -->
+  <dialog id="cartDrawer" class="rounded-3xl p-0 w-[95%] md:w-[500px] max-w-[95vw] shadow-soft">
+    <div class="bg-white rounded-3xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-center p-6 border-b">
+        <h3 class="font-semibold text-xl">Your Cart</h3>
+        <button id="closeCart" class="rounded-full border border-neutral-300 px-4 py-2 hover:bg-neutral-50 transition-colors">Close</button>
+      </div>
+      <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+      <div class="border-t p-6">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-lg">Subtotal</span>
+          <strong id="cartSubtotal" class="text-xl">$0</strong>
+        </div>
+        <p class="text-xs text-neutral-600 mb-4">Taxes and shipping calculated at checkout. Free shipping on orders over $100.</p>
+        <div class="space-y-3">
+          <button id="checkoutWhatsApp" class="w-full rounded-2xl px-6 py-4 bg-green-600 text-white hover:bg-green-700 transition-colors font-semibold">Checkout via WhatsApp</button>
+          <a id="checkoutStripe" target="_blank" class="block text-center rounded-2xl px-6 py-4 border-2 border-neutral-300 hover:bg-neutral-50 transition-colors font-semibold">Pay with Stripe</a>
+          <a id="checkoutPayPal" target="_blank" class="block text-center rounded-2xl px-6 py-4 border-2 border-neutral-300 hover:bg-neutral-50 transition-colors font-semibold">Pay with PayPal</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // Configuration - UPDATE THESE VALUES
+    const config = {
+      // Replace with your WhatsApp number (country code + number, no + sign)
+      phone: '91XXXXXXXXXX', // Example: '919876543210' for Indian number
+      // Replace with your actual payment links
+      stripeLink: 'https://buy.stripe.com/your-payment-link', 
+      paypalLink: 'https://paypal.me/your-paypal-link',
+      currency: 'USD', // Change to your preferred currency
+      currencySymbol: '$'
+    };
+
+    // Product data
+    const products = [
+      {
+        "id": "led-mask",
+        "name": "EternaGlow LED Skin Therapy Mask",
+        "price": 149.99,
+        "compare_at": 229.00,
+        "desc": "Spa-grade LED light therapy to reduce acne, smooth fine lines, and boost radiance — in just 10 minutes a day. Professional results at home.",
+        "bullets": [
+          "7-color LED modes for targeted skincare",
+          "Safe, non-invasive, FDA-style design",
+          "USB-C rechargeable, 20 sessions per charge",
+          "Suitable for all skin types",
+          "Clinical studies show 90% improvement in skin texture"
+        ],
+        "img": "https://images.pexels.com/photos/3737600/pexels-photo-3737600.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "pay_link": "https://buy.stripe.com/your-led-mask-link"
+      },
+      {
+        "id": "sonic-cleanser",
+        "name": "Sonic Pore-Refining Cleanser",
+        "price": 59.99,
+        "compare_at": 89.00,
+        "desc": "Deep-clean pores and remove makeup 6× better than hands with gentle sonic bristles. Perfect for daily skincare routine.",
+        "bullets": [
+          "Waterproof design with 3 speed modes",
+          "Medical-grade silicone brush head",
+          "USB-C fast charging (30 days battery)",
+          "Removes 99.5% of makeup and impurities",
+          "Gentle enough for sensitive skin"
+        ],
+        "img": "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "pay_link": "https://buy.stripe.com/your-cleanser-link"
+      },
+      {
+        "id": "ipl-handset",
+        "name": "EternaGlow IPL Hair Removal Handset",
+        "price": 179.00,
+        "compare_at": 259.00,
+        "desc": "Salon-quality hair reduction from home with advanced IPL technology. Visible results in 4–6 weeks with consistent use.",
+        "bullets": [
+          "999,000 flashes for lifetime use",
+          "Auto and Manual modes for face & body",
+          "Built-in skin tone safety sensor",
+          "Suitable for light to medium skin tones",
+          "Clinically proven 85% hair reduction"
+        ],
+        "img": "https://images.pexels.com/photos/3997994/pexels-photo-3997994.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "pay_link": "https://buy.stripe.com/your-ipl-link"
+      }
+    ];
+
+    // State management
+    const state = {
+      products: products,
+      cart: JSON.parse(localStorage.getItem('eg_cart') || '[]')
+    };
+
+    // Utility functions
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const currency = (n) => `${config.currencySymbol}${n.toFixed(2)}`;
+
+    // DOM elements
+    const productGrid = $('#productGrid');
+    const productModal = $('#productModal');
+    const modalTitle = $('#modalTitle');
+    const modalImg = $('#modalImg');
+    const modalDesc = $('#modalDesc');
+    const modalBullets = $('#modalBullets');
+    const modalPrice = $('#modalPrice');
+    const modalCompare = $('#modalCompare');
+    const addToCartBtn = $('#addToCartBtn');
+    const buyNowLink = $('#buyNowLink');
+
+    const cartDrawer = $('#cartDrawer');
+    const cartItems = $('#cartItems');
+    const cartSubtotal = $('#cartSubtotal');
+    const cartCount = $('#cartCount');
+
+    function renderProducts() {
+      productGrid.innerHTML = state.products.map(p => {
+        const savings = ((p.compare_at - p.price) / p.compare_at * 100).toFixed(0);
+        return `
+          <article class="bg-white rounded-2xl shadow-soft overflow-hidden flex flex-col hover:shadow-lg transition-shadow group">
+            <button data-id="${p.id}" class="block text-left relative overflow-hidden">
+              <img src="${p.img}" alt="${p.name}" class="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute top-4 right-4 bg-red-500 text-white text-sm px-2 py-1 rounded-full">
+                Save ${savings}%
+              </div>
+            </button>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="font-semibold text-lg mb-2">${p.name}</h3>
+              <p class="text-sm text-neutral-600 line-clamp-2 mb-4 flex-1">${p.desc}</p>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="font-bold text-xl text-neutral-900">${currency(p.price)}</span>
+                <span class="text-neutral-500 line-through">${currency(p.compare_at)}</span>
+              </div>
+              <div class="flex gap-2">
+                <button class="add-to-cart flex-1 rounded-xl px-4 py-3 bg-neutral-900 text-white hover:bg-neutral-800 transition-colors font-semibold" data-id="${p.id}">
+                  Add to Cart
+                </button>
+                <button data-id="${p.id}" class="rounded-xl px-4 py-3 border-2 border-neutral-300 hover:bg-neutral-50 transition-colors">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      // Attach event handlers
+      $$('#productGrid button[data-id]').forEach(btn => {
+        btn.addEventListener('click', () => openProduct(btn.getAttribute('data-id')));
+      });
+      $$('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          addToCart(btn.getAttribute('data-id'));
+        });
+      });
+    }
+
+    function openProduct(id) {
+      const p = state.products.find(x => x.id === id);
+      if (!p) return;
+      
+      modalTitle.textContent = p.name;
+      modalImg.src = p.img;
+      modalImg.alt = p.name;
+      modalDesc.textContent = p.desc;
+      modalBullets.innerHTML = p.bullets.map(b => `<li>${b}</li>`).join('');
+      modalPrice.textContent = currency(p.price);
+      modalCompare.textContent = currency(p.compare_at);
+      buyNowLink.href = p.pay_link || '#';
+      addToCartBtn.onclick = () => {
+        addToCart(p.id);
+        productModal.close();
+      };
+      productModal.showModal();
+    }
+
+    function addToCart(id) {
+      const p = state.products.find(x => x.id === id);
+      if (!p) return;
+      
+      const existingItem = state.cart.find(x => x.id === id);
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        state.cart.push({ id, qty: 1 });
+      }
+      
+      localStorage.setItem('eg_cart', JSON.stringify(state.cart));
+      updateCartUI();
+      
+      // Show success feedback
+      cartDrawer.showModal();
+    }
+
+    function removeFromCart(id) {
+      const index = state.cart.findIndex(x => x.id === id);
+      if (index >= 0) {
+        state.cart.splice(index, 1);
+        localStorage.setItem('eg_cart', JSON.stringify(state.cart));
+        updateCartUI();
+      }
+    }
+
+    function updateCartQuantity(id, newQty) {
+      const item = state.cart.find(x => x.id === id);
+      if (!item) return;
+      
+      if (newQty <= 0) {
+        removeFromCart(id);
+      } else {
+        item.qty = newQty;
+        localStorage.setItem('eg_cart', JSON.stringify(state.cart));
+        updateCartUI();
+      }
+    }
+
+    function updateCartUI() {
+      const enrichedCart = state.cart.map(line => {
+        const product = state.products.find(x => x.id === line.id);
+        return { ...line, ...product, lineTotal: line.qty * product.price };
+      });
+      
+      const subtotal = enrichedCart.reduce((sum, item) => sum + item.lineTotal, 0);
+      const totalItems = state.cart.reduce((sum, item) => sum + item.qty, 0);
+      
+      cartItems.innerHTML = enrichedCart.length 
+        ? enrichedCart.map(item => `
+            <div class="flex items-start gap-4 p-4 bg-neutral-50 rounded-xl">
+              <img src="${item.img}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg"/>
+              <div class="flex-1">
+                <h4 class="font-semibold mb-1">${item.name}</h4>
+                <p class="text-sm text-neutral-600 mb-2">${currency(item.price)} each</p>
+                <div class="flex items-center gap-2">
+                  <button class="w-8 h-8 rounded-full border border-neutral-300 hover:bg-white flex items-center justify-center qty-btn" data-id="${item.id}" data-action="decrease">
+                    −
+                  </button>
+                  <span class="w-8 text-center">${item.qty}</span>
+                  <button class="w-8 h-8 rounded-full border border-neutral-300 hover:bg-white flex items-center justify-center qty-btn" data-id="${item.id}" data-action="increase">
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="font-semibold mb-2">${currency(item.lineTotal)}</div>
+                <button class="text-xs text-neutral-600 hover:text-red-600 underline remove-btn" data-id="${item.id}">
+                  Remove
+                </button>
+              </div>
+            </div>
+          `).join('')
+        : '<div class="text-center py-8 text-neutral-600"><p class="text-lg mb-2">Your cart is empty</p><p class="text-sm">Add some products to get started!</p></div>';
+      
+      cartSubtotal.textContent = currency(subtotal);
+      cartCount.textContent = totalItems;
+
+      // Attach quantity and remove handlers
+      $$('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-id');
+          const action = btn.getAttribute('data-action');
+          const currentItem = state.cart.find(x => x.id === id);
+          if (!currentItem) return;
+          
+          const newQty = action === 'increase' ? currentItem.qty + 1 : currentItem.qty - 1;
+          updateCartQuantity(id, newQty);
+        });
+      });
+      
+      $$('.remove-btn').forEach(btn => {
+        btn.addEventListener('click', () => removeFromCart(btn.getAttribute('data-id')));
+      });
+    }
+
+    function checkoutWhatsApp() {
+      const enrichedCart = state.cart.map(line => {
+        const product = state.products.find(x => x.id === line.id);
+        return { ...line, ...product, lineTotal: line.qty * product.price };
+      });
+      
+      if (!enrichedCart.length) {
+        alert('Your cart is empty!');
+        return;
+      }
+      
+      const subtotal = enrichedCart.reduce((sum, item) => sum + item.lineTotal, 0);
+      const orderSummary = enrichedCart.map(item => 
+        `• ${item.name} × ${item.qty} — ${currency(item.lineTotal)}`
+      ).join('%0A');
+      
+      const message = `Hello! I'd like to place an order:%0A%0A${orderSummary}%0A%0ASubtotal: ${currency(subtotal)}%0A%0APlease confirm availability and provide payment details.%0A%0ADelivery Details:%0AName: %0APhone: %0AAddress: %0ACity/State: %0APincode: `;
+      
+      const whatsappUrl = `https://wa.me/${config.phone}?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Smooth scrolling for anchor links
+    function initSmoothScroll() {
+      $$('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetElement = $(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    }
+
+    // Initialize app
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      updateCartUI();
+      initSmoothScroll();
+      
+      // Set current year
+      $('#year').textContent = new Date().getFullYear();
+      
+      // Modal and drawer controls
+      $('#closeModal').addEventListener('click', () => productModal.close());
+      $('#openCart').addEventListener('click', () => cartDrawer.showModal());
+      $('#closeCart').addEventListener('click', () => cartDrawer.close());
+      
+      // Checkout handlers
+      $('#checkoutWhatsApp').addEventListener('click', checkoutWhatsApp);
+      $('#checkoutStripe').href = config.stripeLink;
+      $('#checkoutPayPal').href = config.paypalLink;
+      
+      // Close modals on backdrop click
+      [productModal, cartDrawer].forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.close();
+          }
+        });
+      });
+      
+      console.log('✨ EternaGlow store initialized successfully!');
+      console.log('📝 Remember to update WhatsApp number and payment links in the script configuration.');
+    });
+  </script>
+</body>
+</html>
